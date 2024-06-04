@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiny Head Calculator - Email</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Email</h1>
+        <form id="emailForm" onsubmit="submitEmail(event)">
+            <label for="email">Your Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <button type="submit">Get Results</button>
+        </form>
+    </div>
+    <script>
+        function submitEmail(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+
+            // Example SendFox API call - replace with actual API details
+            const sendFoxAPI = 'https://api.sendfox.com/contacts';
+            const sendFoxKey = 'YOUR_SENDFOX_API_KEY'; // Replace with your actual SendFox API key
+            const listId = 'YOUR_LIST_ID'; // Replace with your actual list ID
+
+            fetch(sendFoxAPI, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sendFoxKey}`
+                },
+                body: JSON.stringify({
+                    email: email,
+                    lists: [listId]
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Store email in localStorage to pass to the next page
+                    localStorage.setItem('email', email);
+
+                    // Redirect to results page
+                    window.location.href = 'results.html';
+                } else {
+                    alert('There was an error adding your email to the list.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error adding your email to the list.');
+            });
+        }
+    </script>
+</body>
+</html>
