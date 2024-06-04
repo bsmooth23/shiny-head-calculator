@@ -21,10 +21,10 @@
             event.preventDefault();
             const email = document.getElementById('email').value;
 
-            // Example SendFox API call - replace with actual API details
+            // Replace these with your actual SendFox details
             const sendFoxAPI = 'https://api.sendfox.com/contacts';
-            const sendFoxKey = 'YOUR_SENDFOX_API_KEY'; // Replace with your actual SendFox API key
-            const listId = 'YOUR_LIST_ID'; // Replace with your actual list ID
+            const sendFoxKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjkyOGUzOWIyY2E5NzA3MzEzYzk4Y2VkNzhlNzFkMjE3YTNjYjVlNmUxOTI5MjI1ZGE4MDJkZWMxMDMwYjJmZDVlOTc5MjRlMmJjOGIxMGJlIn0.eyJhdWQiOiI5MzciLCJqdGkiOiI5MjhlMzliMmNhOTcwNzMxM2M5OGNlZDc4ZTcxZDIxN2EzY2I1ZTZlMTkyOTIyNWRhODAyZGVjMTAzMGIyZmQ1ZTk3OTI0ZTJiYzhiMTBiZSIsImlhdCI6MTcxNzQ3MzI0MCwibmJmIjoxNzE3NDczMjQwLCJleHAiOjQ4NzMxNDY4MzksInN1YiI6IjIyNTc0Iiwic2NvcGVzIjpbXX0.exUm4A1bahH9SaYVoCD6Eucvrahd0EocY-3yN2-ypUgNWtKpwsuAOGBARghd5o2W2nOYPxH6YtExR1neJjgJQSHMdBVe-upkNB40-TDhOTGCywn7_YnaPCl9-wBRCLx75DorcWyz1nclfM5_yi-2jvHxagYlz5aWczhDScFPe7vptZCCzYOjSUf0CAJ2E4SsFlLznOoL2Dw_rx-A9KnUB0sWLxRZ4nR3qgvvl-LZmdkaM8ZQu8fXgoj-miXT2JJg_vCXjyLfC8B2AMd0YiBW_LTZU6z2C4VVSJc5qljz_A4STJYYM6tsFXSFDBefVQbz_eYM3XD9nk0Tvi0ADcg9HAxGz9oOx5jibFMJrcvMRgPaHayzH3ghG6RFQ30FOOP7L5zGSpbPaEb_iy_hFxQUUdt7IOLvYmnkX56EOLSB6f7Gp22IDmw_E69-46Y0WqjyOnS4lSvcPmbcOZ_9OLGHvvZ0it1G2G7IrKEWLDKKREUETcdWLgL0yt667R3TRK2SaclXF02-Ur1uKD0nWmPWuLLBEAkN9_3k5b7Dm7hG0kZ_EGKXxxD3kgd_L8GAoGWKgSklE62lMSaIwtCsJ2E35PTI4RdkVC8YLlj87ILrXNijObj4mcYmZGe_FmGNngjZ5ydspSalaV693JrX4aBkrGt6t24OpOWD0TLI4tAEPlI'; // Replace with your actual SendFox API key
+            const listId = 'baldheadcalculator'; // Replace with your actual list ID
 
             fetch(sendFoxAPI, {
                 method: 'POST',
